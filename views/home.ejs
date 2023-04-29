@@ -10,6 +10,10 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"
+    ></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800&display=swap"
@@ -137,7 +141,9 @@
         <% post.forEach(data => { %>
         <div class="card">
           <img src="<%= data.image %>" alt="" class="post-img" />
-          <a href="/post/<%= data.slug %>" class="post-title"><%= data.name %></a>
+          <a href="/post/<%= data.slug %>" class="post-title"
+            ><%= data.name %></a
+          >
           <div class="post-date">
             <i class="bx bxs-calendar-alt"></i>
             <p><%= data.Dates.startDate.toISOString().substr(0, 10) %></p>
@@ -191,7 +197,7 @@
             <i class="bx bxs-calendar-alt"></i>
             <p>February 21, 2020</p>
           </div>
-        </div>  
+        </div>
       </div>
     </div>
 
@@ -199,6 +205,14 @@
 
     <footer>
       <img class="footer-img" src="./images/footer-bg3.png" alt="" />
+      <model-viewer
+        class="indiagate"
+        src="./images/indiagate.gltf"
+        ar
+        shadow-intensity="1"
+        camera-controls
+        touch-action="pan-y"
+      ></model-viewer>
       <div class="container">
         <div class="main-footer">
           <div class="about-us-container">
