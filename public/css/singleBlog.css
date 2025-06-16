@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  width: 100%;
+  display: inline-block;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-section {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(../images/explore.png);
+  background-size: cover;
+  background-position: center;
+
+  height: 80vh;
+  color: #fff;
+}
+
+.hero-content {
+  text-align: center;
+  font-size: 1.5cm;
+  padding: 15rem 0;
+  font-family: "Playfair Display";
+}
+
+.hero-description {
+  font-family: "Cabin";
+  font-size: 2.5rem;
+  padding-top: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.main-section {
+  padding: 8rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: "Playfair Display";
+  font-size: 40px;
+  color: #000000;
+  padding: 5rem 0 4rem 0;
+}
+
+.content {
+  font-family: "Cabin";
+  font-size: 20px;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 140%;
+}
+
+.bx {
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.5);
+  padding-right: 0.5rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.text {
+  font-family: "Cabin";
+  font-size: 16px;
+  color: rgba(81, 81, 81, 0.5);
+  padding-right: 2rem;
+}
+
+input {
+  width: 900px;
+  font-size: 16px;
+  padding: 2rem 1rem;
+  color: rgba(81, 81, 81, 0.5);
+  margin-right: 0rem;
+  border-radius: 10px 0px 0px 10px;
+}
+
+button {
+  padding: 2rem 3rem;
+  color: #fff;
+  background-color: #000000;
+  font-size: 16px;
+  border-radius: 0 10px 10px 0px;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #000000;
+  border: 2px solid black;
+}
+
+.singleImage {
+  height: 500px;
+  width: auto;
+  margin-right: 200px;
+}
+
+.imageDiv {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.qr {
+  width: 300px;
+  height: 300px;
+}
+
+.qrDiv {
+  text-align: center;
+}
+
+.commentsub {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.commentUser {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+
+.name {
+  font-family: "Cabin";
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.comment {
+  font-family: "Cabin";
+  font-weight: 600;
+  font-size: 16px;
+}
+

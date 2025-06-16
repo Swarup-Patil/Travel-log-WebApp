@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"
+    ></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&family=Kristi&family=Montserrat:wght@200;300;400;500&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/home.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="hero-section">
+      <header class="container">
+        <nav>
+          <img src="./images/TravelGasm Vertical.png" class="logo" />
+          <ul class="nav-list">
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="/post/">EXPLORE</a></li>
+            <li><a href="/post/create">POST</a></li>
+            <li><a href="/">LOGOUT</a></li>
+            <!-- <li><a href="/profile/<%= user %>">PROFILE</a></li> -->
+          </ul>
+          <span><i class="bx bx-menu btn-open"></i></span>
+        </nav>
+
+        <div class="center">
+          <div class="hero-content">
+            <p class="sub-header">adventurous</p>
+            <h1 class="header-title">Explore, Travel, Love</h1>
+            <br />
+            <!-- <form class="form-control" action="#" method="POST">
+            <input
+              type="text"
+              name="search"
+              placeholder="Search for a movie "
+            />
+            <button type="submit"><i class="bx bx-search"></i></button>
+          </form> -->
+            <!-- <a href="#" class="btn">Make a Reservation</a> -->
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- ----------- about -------------------------  -->
+
+    <div class="about-bg" id="about">
+      <div class="container about">
+        <div class="about-imgs-txt">
+          <img src="./images/About.png" alt="news image" class="img-fluid" />
+        </div>
+        <div>
+          <h3 class="title">A Simply Perfect Place To Get Lost</h3>
+          <p class="about-para-txt">
+            Treat yourself with a journey to your inner self. Visit a mystique
+            Tibet and start spiritual adventure. We promise, you’ll enjoy every
+            step you make.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- -------------------- section 2 -----------------------  -->
+
+    <div class="section2">
+      <div class="section2-text">
+        <p class="section2-header">adventurous</p>
+        <h3 class="section2-title">Dare To Explore</h3>
+        <p class="section2-para">
+          Treat yourself with a journey to your inner self. Visit a mystique
+          Tibet and start spiritual adventure. We promise, you’ll enjoy every
+          step you make.
+        </p>
+        <a href="#" class="see-btn">SEE MORE</a>
+      </div>
+    </div>
+
+    <!-- --------------- gallery -------------------------  -->
+
+    <!-- <div class="gallery" id="gallery">
+      <div class="gallery-container">
+        <div class="galleryImg gallery1">
+          <p class="gallery-content">JAPAN</p>
+        </div>
+      </div>
+      <div class="gallery-container">
+        <div class="galleryImg gallery2">
+          <p class="gallery-content">KOREA</p>
+        </div>
+      </div>
+      <div class="gallery-container">
+        <div class="galleryImg gallery3">
+          <p class="gallery-content">NORWAY</p>
+        </div>
+      </div>
+      <div class="gallery-container">
+        <div class="galleryImg gallery4">
+          <p class="gallery-content">INDIA</p>
+        </div>
+      </div>
+      <div class="gallery-container">
+        <div class="galleryImg gallery5">
+          <p class="gallery-content">NEW-YORK</p>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="section-3">
+      <h1 class="blog-title">Blog Post</h1>
+      <p class="blog-para">
+        Treat yourself with a journey to your inner self. Visit a mystique Tibet
+        and start spiritual adventure. We promise, you’ll enjoy every step you
+        make.
+      </p>
+      <div class="wrapper">
+        <% post.forEach(data => { %>
+        <div class="card">
+          <img src="<%= data.image %>" alt="" class="post-img" />
+          <a href="/post/<%= data.slug %>" class="post-title"
+            ><%= data.name %></a
+          >
+          <div class="post-date">
+            <i class="bx bxs-calendar-alt"></i>
+            <p><%= data.Dates.startDate.toISOString().substr(0, 10) %></p>
+          </div>
+        </div>
+        <% }) %>
+        <div class="card">
+          <img src="./images/gallery1.jpg" alt="" class="post-img" />
+          <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+          <div class="post-date">
+            <i class="bx bxs-calendar-alt"></i>
+            <p>February 21, 2020</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/gallery2.jpg" alt="" class="post-img" />
+          <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+          <div class="post-date">
+            <i class="bx bxs-calendar-alt"></i>
+            <p>February 21, 2020</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/gallery3.jpg" alt="" class="post-img" />
+          <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+          <div class="post-date">
+            <i class="bx bxs-calendar-alt"></i>
+            <p>February 21, 2020</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/gallery1.jpg" alt="" class="post-img" />
+          <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+          <div class="post-date">
+            <i class="bx bxs-calendar-alt"></i>
+            <p>February 21, 2020</p>
+          </div>
+        </div>
+        <!-- <div class="card">
+          <img src="./images/gallery1.jpg" alt="" class="post-img" />
+          <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+          <div class="post-date">
+            <i class="bx bxs-calendar-alt"></i>
+            <p>February 21, 2020</p>
+          </div>
+        </div> -->
+        <!-- <div class="card">
+          <img src="./images/gallery1.jpg" alt="" class="post-img" />
+          <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+          <div class="post-date">
+            <i class="bx bxs-calendar-alt"></i>
+            <p>February 21, 2020</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- --------------------- footer ----------------------->
+
+    <footer>
+      <img class="footer-img" src="./images/footer-bg3.png" alt="" />
+      <model-viewer
+        class="indiagate"
+        src="./images/indiagate.gltf"
+        ar
+        shadow-intensity="1"
+        camera-controls
+        touch-action="pan-y"
+      ></model-viewer>
+      <div class="container">
+        <div class="main-footer">
+          <div class="about-us-container">
+            <h2 class="footer-title">About Us</h2>
+            <p>
+              Visit our restaurant to experience our relaxing atmosphere, to
+              find a peace of mind and to enjoy our diverse, delicious, gourmet
+              menu. Our extensive choice of side and main dishes and appetizers,
+              as well as NA and alcoholic beverages are made to make your taste
+              buds happy!
+            </p>
+          </div>
+
+          <div class="contact-us-list">
+            <h2 class="footer-title">Contact Us</h2>
+
+            <div class="info-box">
+              <i class="icon-map-marker"></i>
+              <a>6087 Richmond hwy, Alexandria, VA</a>
+            </div>
+
+            <div class="info-box">
+              <i class="icon-phone"></i>
+              <a>703 329 0632</a>
+            </div>
+
+            <div class="info-box">
+              <i class="icon-time"></i>
+              <a>Mo-Fr 11:00-00:00, Sa-Sa 15:00-00:00</a>
+            </div>
+
+            <div class="info-box">
+              <i class="icon-envelope"></i>
+              <a>info@demolink.org</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-end">
+          <p>© 2022 TravelGasm, With love</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

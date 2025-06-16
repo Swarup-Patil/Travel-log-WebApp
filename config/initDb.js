@@ -13,6 +13,7 @@ const initDB = () => {
   if (process.env.NODE_ENV === "test") dbUri = process.env.DB_TEST_URI;
   if (process.env.NODE_ENV === "prod") dbUri = process.env.DB_URI;
 
+  console.log(dbUri)
   // connection to db
   mongoose.connect(dbUri, options);
 
@@ -23,7 +24,7 @@ const initDB = () => {
   });
 
   connection.on("error", (err) => {
-    console.log(err);
+    console.log(err ,  "error");
   });
 
   connection.on("disconnected", () => {

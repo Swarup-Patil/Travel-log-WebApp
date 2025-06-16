@@ -1,0 +1,7 @@
+.explore-section {
+    background-image: url(/images/explore.png);
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    color: #fff;
+  }

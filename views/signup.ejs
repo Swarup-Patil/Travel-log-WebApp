@@ -1,30 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/signup" method="POST">
-        <div class="form">
-            <h3 class="title"><span>Ready To</span> Eat! </h3>
-            <img class="logo" src="/images/logo.png" alt="">
-            <div class="content">
-                <div>
-                    <input class="input" type="text" placeholder="Full Name" id="name" name="name" required></input>
-                </div>
-                <div>
-                    <input class="input" type="email" placeholder="Email" id="email" name="email" required></input>
-                </div>
-                <div>
-                    <input class="input" type="password" placeholder="Password" id="password" name="password" required></input>
-                </div>
-            <div><button type="submit" class="button">SIGN UP</button></div>
-            <p class="aha">Already have an account? <span><a href="/login"> Sign In</a></span></p>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-signin-client_id"
+      content="969755449368-vj7t9jpdhkgd7kf5ua4p6h7mmod63q1k.apps.googleusercontent.com"
+    />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    /> -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/home.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <% console.log(secret) %>
+    <div class="hero-section">
+      <header class="container">
+        <nav>
+          <img src="./images/TravelGasm Vertical.png" class="logo" />
+          <ul class="nav-list">
+            <!-- <li>HOME</li>
+            <li>ABOUT</li>
+            <li>BLOG</li>
+            <li>GALLERY</li> -->
+            <li><a href="/register">REGISTER</a></li>
+          </ul>
+          <ul class="mob-nav-list">
+            <!-- <li>ABOUT</li>
+            <li>GALLERY</li> -->
+            <li><a href="#">REGISTER</a></li>
+            <li class="close-icon">X</li>
+          </ul>
+          <span><i class="bx bx-menu btn-open"></i></span>
+        </nav>
+
+        <div class="hero-content">
+          <h1 class="header-title">
+            DIVE INTO WORLD TO TRAVELGASM
+          </h1>
+          <br />
+          <div class="google-btn">
+            <div
+              id="g_id_onload"
+              data-client_id="969755449368-vj7t9jpdhkgd7kf5ua4p6h7mmod63q1k.apps.googleusercontent.com"
+              data-login_uri="http://localhost:5000/login/auth/google"
+              data-auto_prompt="false"
+            ></div>
+            <div
+              class="g_id_signin"
+              data-type="standard"
+              data-size="large"
+              data-theme="outline"
+              data-text="sign_in_with"
+              data-shape="rectangular"
+              data-logo_alignment="left"
+            ></div>
+          </div>
         </div>
-    </form>
-</body>
+      </header>
+    </div>
+
+    <script src="/js/nav.js"></script>
+  </body>
 </html>

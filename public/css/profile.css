@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  width: 100%;
+  display: inline-block;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-section {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(../images/explore.png);
+  background-size: cover;
+  background-position: center;
+
+  height: 80vh;
+  color: #fff;
+}
+
+.hero-content {
+  text-align: center;
+  font-size: 1.5cm;
+  padding: 15rem 0;
+  font-family: "Playfair Display";
+}
+
+.hero-description {
+  font-family: "Cabin";
+  font-size: 2.5rem;
+  padding-top: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.main-section {
+  padding: 12rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: "Playfair Display";
+  font-size: 40px;
+  color: #000000;
+  padding: 5rem 0 4rem 0;
+}
+
+.content {
+  font-family: "Cabin";
+  font-size: 20px;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 140%;
+}

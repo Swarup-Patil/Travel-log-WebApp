@@ -4,7 +4,7 @@ const initDB = require("./config/initDb");
 const initMiddlewares = require("./config/initMiddleware");
 const initRoutes = require("./routes/index");
 const path = require("path");
-let PORT = process.env.NODE_ENV === "prod" ? 5001 : 5000;
+let PORT = 5000;
 
 // Initializing DB
 initDB();

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/explore.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&family=Kristi&family=Montserrat:wght@200;300;400;500&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="explore-section">
+      <header class="container">
+        <nav>
+          <img src="../images/TravelGasm Vertical.png" class="logo" />
+          <ul class="nav-list">
+            <li><a href="/dashboard">ABOUT</a></li>
+            <li><a href="/post/">EXPLORE</a></li>
+            <li><a href="/post/create">POST</a></li>
+            <li><a href="/">LOGOUT</a></li>
+          </ul>
+          <span><i class="bx bx-menu btn-open"></i></span>
+        </nav>
+
+        <div class="center">
+        </br>
+            <p class="sub-header">adventurous</p>
+            <h1 class="header-title">Explore, Travel, Love</h1>
+        </div>
+      </header>
+    </div>
+
+    <div class="section-3">
+        <!-- <h1 class="blog-title">Blog Post</h1>
+        <p class="blog-para">
+          Treat yourself with a journey to your inner self. Visit a mystique Tibet
+          and start spiritual adventure. We promise, you’ll enjoy every step you
+          make.
+        </p> -->
+        <div class="wrapper">
+          <% post.forEach(data => { %>
+          <div class="card">
+            <img src="<%= data.image %>" alt="" class="post-img" />
+            <a href="/post/<%= data.slug %>" class="post-title"><%= data.name %></a>
+            <div class="post-date">
+              <i class="bx bxs-calendar-alt"></i>
+              <p><%= data.Dates.startDate.toISOString().substr(0, 10) %></p>
+            </div>
+          </div>
+          <% }) %>
+          <div class="card">
+            <img src="../images/gallery1.jpg" alt="" class="post-img" />
+            <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+            <div class="post-date">
+              <i class="bx bxs-calendar-alt"></i>
+              <p>February 21, 2020</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../images/gallery2.jpg" alt="" class="post-img" />
+            <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+            <div class="post-date">
+              <i class="bx bxs-calendar-alt"></i>
+              <p>February 21, 2020</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../images/gallery3.jpg" alt="" class="post-img" />
+            <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+            <div class="post-date">
+              <i class="bx bxs-calendar-alt"></i>
+              <p>February 21, 2020</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../images/gallery1.jpg" alt="" class="post-img" />
+            <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+            <div class="post-date">
+              <i class="bx bxs-calendar-alt"></i>
+              <p>February 21, 2020</p>
+            </div>
+          </div>
+          <!-- <div class="card">
+            <img src="../images/gallery1.jpg" alt="" class="post-img" />
+            <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+            <div class="post-date">
+              <i class="bx bxs-calendar-alt"></i>
+              <p>February 21, 2020</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../images/gallery1.jpg" alt="" class="post-img" />
+            <h2 class="post-title">Journey Are Best Measured In New Friends</h2>
+            <div class="post-date">
+              <i class="bx bxs-calendar-alt"></i>
+              <p>February 21, 2020</p>
+            </div>
+          </div>   -->
+        </div>
+      </div>
+      <footer>
+        <!-- <img class="footer-img" src="./images/footer-bg3.png" alt=""> -->
+        <div class="container">
+          <div class="main-footer">
+            <div class="about-us-container">
+              <h2 class="footer-title">About Us</h2>
+              <p>
+                Visit our restaurant to experience our relaxing atmosphere, to
+                find a peace of mind and to enjoy our diverse, delicious, gourmet
+                menu. Our extensive choice of side and main dishes and appetizers,
+                as well as NA and alcoholic beverages are made to make your taste
+                buds happy!
+              </p>
+            </div>
+  
+            <div class="contact-us-list">
+              <h2 class="footer-title">Contact Us</h2>
+  
+              <div class="info-box">
+                <i class="icon-map-marker"></i>
+                <a>6087 Richmond hwy, Alexandria, VA</a>
+              </div>
+  
+              <div class="info-box">
+                <i class="icon-phone"></i>
+                <a>703 329 0632</a>
+              </div>
+  
+              <div class="info-box">
+                <i class="icon-time"></i>
+                <a>Mo-Fr 11:00-00:00, Sa-Sa 15:00-00:00</a>
+              </div>
+  
+              <div class="info-box">
+                <i class="icon-envelope"></i>
+                <a>info@demolink.org</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-end">
+            <p>
+              © 2022 TravelGasm, With love
+            </p>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>

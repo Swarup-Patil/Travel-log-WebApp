@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/create.css" />
+    <link rel="stylesheet" href="/css/explore.css" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&family=Kristi&family=Montserrat:wght@200;300;400;500&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+    <script src="https://unpkg.com/axios@1.3.4/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="explore-section">
+        <header class="container">
+            <nav>
+                <img src="../images/TravelGasm Vertical.png" class="logo" />
+                <ul class="nav-list">
+                    <li><a href="/dashboard">ABOUT</a></li>
+                    <li><a href="/post/">EXPLORE</a></li>
+                    <li><a href="/post/create">POST</a></li>
+                    <li><a href="/">LOGOUT</a></li>
+                    <!-- <li><a href="#">PROFILE</a></li> -->
+                </ul>
+                <span><i class="bx bx-menu btn-open"></i></span>
+            </nav>
+
+            <div class="center">
+                <p class="sub-header">adventurous</p>
+                <h1 class="header-title">Explore, Travel, Love</h1>
+            </div>
+        </header>
+    </div>
+
+    <form enctype="multipart/form-data">
+        <div class="flex-div">
+            <div class="input-div">
+                <label>Title</label>
+                <input type="text" name="name" id="name" required class="" placeholder="Eg: Gateway to Heaven" />
+            </div>
+            <div class="input-div">
+                <label>AR</label>
+                <input type="text" name="ar" id="name" required class="" placeholder="" />
+            </div>
+        </div>
+        <div class="input-div">
+            <label>Country:</label>
+            <input type="text" name="country" id="name" required class="" placeholder="Eg: India" />
+        </div>
+        <div class="input-div">
+            <label>Body</label>
+            <input type="about" type="hidden" style="display: none" />
+            <div id="toolbar"></div>
+            <div id="editor"></div>
+        </div>
+
+        <div class="flex-div">
+            <div class="input-div">
+                <label>State</label>
+                <input type="text" name="state" id="date" required class="" placeholder="select" />
+            </div>
+            <div class="input-div">
+                <label>City</label>
+                <input type="text" name="city" id="date" class="" placeholder="select" />
+            </div>
+        </div>
+        <div class="flex-div">
+            <div class="input-div">
+                <label>start date</label>
+                <input type="date" name="startDate" id="desc" required class=""
+                    placeholder="Eg: Competition level/Outcomes/grade/stipend" />
+            </div>
+            <div class="input-div">
+                <label>end date</label>
+                <input type="date" name="endDate" id="name" class=""
+                    placeholder="Eg: https://drive.google.com/text.pdf" />
+            </div>
+        </div>
+        <input type="file" name="image" />
+    </form>
+    <div class="flex">
+        <button onclick="submit()" class="sub-button">Submit</button>
+        <a href="/dashboard" class="ba-button">Back</a>
+    </div>
+    <footer>
+        <!-- <img class="footer-img" src="./images/footer-bg3.png" alt=""> -->
+        <div class="container">
+            <div class="main-footer">
+                <div class="about-us-container">
+                    <h2 class="footer-title">About Us</h2>
+                    <p>
+                        Visit our restaurant to experience our relaxing atmosphere, to
+                        find a peace of mind and to enjoy our diverse, delicious, gourmet
+                        menu. Our extensive choice of side and main dishes and appetizers,
+                        as well as NA and alcoholic beverages are made to make your taste
+                        buds happy!
+                    </p>
+                </div>
+
+                <div class="contact-us-list">
+                    <h2 class="footer-title">Contact Us</h2>
+
+                    <div class="info-box">
+                        <i class="icon-map-marker"></i>
+                        <a>6087 Richmond hwy, Alexandria, VA</a>
+                    </div>
+
+                    <div class="info-box">
+                        <i class="icon-phone"></i>
+                        <a>703 329 0632</a>
+                    </div>
+
+                    <div class="info-box">
+                        <i class="icon-time"></i>
+                        <a>Mo-Fr 11:00-00:00, Sa-Sa 15:00-00:00</a>
+                    </div>
+
+                    <div class="info-box">
+                        <i class="icon-envelope"></i>
+                        <a>info@demolink.org</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-end">
+                <p>© 2022 TravelGasm, With love</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>
+    <script>
+
+        const toolbarOptions = [
+            ["bold", "italic", "underline"], // toggled buttons
+
+            [{ header: 1 }, { header: 2 }], // custom button values
+            [{ list: "ordered" }, { list: "bullet" }],
+            [{ header: [1, 2, 3, 4, 5, 6, false] }],
+            [{ font: [] }],
+            [{ align: [] }],
+
+            ["clean", "image"], // remove formatting button
+        ];
+
+        var editor = new Quill("#editor", {
+            modules: { toolbar: toolbarOptions },
+            theme: "snow",
+        });
+
+        let data
+
+        editor.on("text-change", function () {
+            var delta = editor.getContents();
+            var text = editor.getText();
+            var justHtml = editor.root.innerHTML;
+            console.log(justHtml, "html")
+            data = justHtml;
+            // preciousContent.innerHTML = JSON.stringify(delta);
+            // justTextContent.innerHTML = text;
+            // justHtmlContent.innerHTML = justHtml;
+        });
+
+        function submit() {
+            // Populate hidden form on submit
+            // let data;
+            var ar = document.querySelector("input[name=ar]");
+            var name = document.querySelector("input[name=name]");
+            var country = document.querySelector("input[name=country]");
+            var state = document.querySelector("input[name=state]");
+            var city = document.querySelector("input[name=city]");
+            var startDate = document.querySelector("input[name=startDate]");
+            var endDate = document.querySelector("input[name=endDate]");
+            var image = document.querySelector("input[name=image]");
+            var bodyFormData = new FormData();
+            // about.value = JSON.stringify(editor.getContents());
+            bodyFormData.set('name', name.value);
+            bodyFormData.append('country', country.value);
+            bodyFormData.append('state', state.value);
+            bodyFormData.append('body', data);
+            bodyFormData.append('city', city.value);
+            bodyFormData.append('image', image.files[0]);
+            bodyFormData.append('startDate', startDate.value);
+            bodyFormData.append('endDate', endDate.value);
+            bodyFormData.append('ar', ar.value);
+            // for (var pair of bodyFormData.entries()) {
+            //     console.log(pair[0] + ', ' + pair[1]);
+            // }
+            axios({
+                method: 'post',
+                url: 'http://localhost:5000/post',
+                data: bodyFormData
+            })
+                .then(function (response) {
+                    alert("Posted Succesfully!");
+                    location.reload();
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            // data = JSON.stringify(quill.getContents());
+
+            // console.log("Submitted", $(form).serialize(), $(form).serializeArray());
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

@@ -16,6 +16,12 @@ const userSchema = new mongoose.Schema(
     profile: {
       type: String,
     },
+    slug: {
+      type: String,
+      unique: true,
+      required: true,
+      trim: true
+    },
     followers: [
       {
         type: mongoose.Schema.Types.ObjectId,

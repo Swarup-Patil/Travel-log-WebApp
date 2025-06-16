@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <script type="text/javascript" src="dist/purify.min.js"></script> -->
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/create.css" />
+  <link rel="stylesheet" href="/css/singleBlog.css" />
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/axios@1.3.4/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <p id="blog" style="display: none">
+    <%= post.body %>
+  </p>
+  <section class="hero-section">
+    <header class="container">
+      <nav class="nav">
+        <img src="../images/TravelGasm Vertical.png" class="logo" />
+        <ul class="nav-list">
+          <li><a href="/dashboard">ABOUT</a></li>
+          <li><a href="/post/">EXPLORE</a></li>
+          <li><a href="/post/create">POST</a></li>
+          <li><a href="/">LOGOUT</a></li>
+          <!-- <li><a href="/profile %>">PROFILE</a></li> -->
+        </ul>
+        <span><i class="bx bx-menu btn-open"></i></span>
+      </nav>
+    </header>
+
+    <div class="hero-content">
+      <h1>Wanderers</h1>
+      <p class="hero-description">
+        Treat yourself with a journey to your inner self. Visit a mystique
+        Tibet and start spiritual adventure. We promise, you’ll enjoy every
+        step you make.
+      </p>
+    </div>
+  </section>
+  <section class="main-section">
+    <div class="imageDiv">
+      <img src="<%= post.image %>" class="singleImage" />
+      <div class="qrDiv">
+        <img class="qr" src="<%= post.ar %>" alt="" />
+        <h1>Scan this QR for Augmented Reality expirience</h1>
+      </div>
+    </div>
+    <div>
+      <h1 class="heading">
+        <%= post.name %>
+      </h1>
+      <p class="content" id="data"></p>
+    </div>
+    <form action="/post/comment/<%= post.slug %>" method="post">
+      <div class="flex">
+        <div class>
+          <input type="text" name="message" placeholder="What are your thoughts about this post ?" />
+        </div>
+        <div><button type="submit">Comment</button></div>
+      </div>
+    </form>
+    <!-- <div class="flex">
+      <div><i class="bx bx-calendar-alt bx-calendar"></i></div>
+      <div class="text">February 21, 2020</div>
+      <h1 id="likeby" style="display: none">
+        <%= like %>
+      </h1>
+      <h1 id="slug" style="display: none">
+        <%= post.slug %>
+      </h1>
+      <div><i class='bx bx-message-rounded'></i></div>
+            <div class="text">3</div>
+      <div onclick="Liked()"><i class="bx bx-heart" id="heart"></i></div>
+      <div class="text">10</div>
+    </div> -->
+    <div class="commentWrapper">
+      <% post.comments.forEach(data => { %>
+        <div class="commentsub">
+          <img src=<%= data.author.profile %> alt="" class="commentUser"/>
+          <div>
+            <h1 class="name"><%= data.author.name %></h1>
+            <h2 class="comment"> <%= data.message %></h2>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+  </section>
+  <footer>
+    <!-- <img class="footer-img" src="./images/footer-bg3.png" alt=""> -->
+    <div class="container">
+      <div class="main-footer">
+        <div class="about-us-container">
+          <h2 class="footer-title">About Us</h2>
+          <p>
+            Visit our restaurant to experience our relaxing atmosphere, to
+            find a peace of mind and to enjoy our diverse, delicious, gourmet
+            menu. Our extensive choice of side and main dishes and appetizers,
+            as well as NA and alcoholic beverages are made to make your taste
+            buds happy!
+          </p>
+        </div>
+
+        <div class="contact-us-list">
+          <h2 class="footer-title">Contact Us</h2>
+
+          <div class="info-box">
+            <i class="icon-map-marker"></i>
+            <a>6087 Richmond hwy, Alexandria, VA</a>
+          </div>
+
+          <div class="info-box">
+            <i class="icon-phone"></i>
+            <a>703 329 0632</a>
+          </div>
+
+          <div class="info-box">
+            <i class="icon-time"></i>
+            <a>Mo-Fr 11:00-00:00, Sa-Sa 15:00-00:00</a>
+          </div>
+
+          <div class="info-box">
+            <i class="icon-envelope"></i>
+            <a>info@demolink.org</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-end">
+        <p>© 2022 TravelGasm, With love</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    let text = document.getElementById("blog").innerText;
+    console.log(text, "post");
+    const unsanitized_string = text;
+    const sanitizer = new Sanitizer();
+    const target = document.getElementById("data");
+    target.setHTML(unsanitized_string, { sanitizer });
+    let likedby = document.getElementById("likeby").innerText;
+    const slug = document.getElementById("slug").innerText;
+    let like = document.getElementById("heart");
+    console.log(likedby, "true hau kya");
+    if (likedby == true) {
+      like.style.color = "red";
+    }
+    function Liked() {
+      if (likedby) {
+        axios({
+          method: "post",
+          url: `http://localhost:5000/post/likes`,
+          data: {
+            isLike: false,
+            slug: slug,
+          },
+        })
+          .then(function (response) {
+            console.log(response, "res");
+            location.reload();
+          })
+          .catch(function (error) {
+            console.log(error.message);
+          });
+      }
+      //   document.getElementById("p2").style.color = "blue";
+    }
+  </script>
+</body>
+
+</html>
