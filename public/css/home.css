@@ -341,6 +341,7 @@ button {
 }
 
 .post-title {
+  color: black;
   margin-top: 15px;
   font-family: "Playfair Display";
   font-weight: 600;

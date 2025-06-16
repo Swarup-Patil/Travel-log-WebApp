@@ -41,7 +41,6 @@ module.exports.createPost = async (req, res) => {
     response.message = "Please upload the image";
     return res.status(400).json(response);
   } else if (!country) {
-    // Todo: enum country list phekneka with short list.
     fs.unlinkSync(req.file.path);
     response.message = "Please provide a country you explored";
     return res.status(400).json(response);
@@ -55,7 +54,6 @@ module.exports.createPost = async (req, res) => {
     return res.status(400).json(response);
   }
 
-  console.log(ar , "ar")
   let entries = Object.entries(constant.Qr);
   let scanme;
   let data = entries.map(([key, val] = entry) => {
@@ -65,9 +63,7 @@ module.exports.createPost = async (req, res) => {
     return scanme;
   });
 
-  console.log(data , "data")
-  console.log(scanme , "scanme")
-
+ 
   //* image path
   let image;
   if (req.file.originalname != "") {

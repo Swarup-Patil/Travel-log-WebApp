@@ -8,20 +8,16 @@ const User = require("../models/User");
 const Post = require("../models/Post")
 
 module.exports.signIn = (req, res) => {
-  console.log("hello yash");
   const secret = req.user
-  console.log(secret , "user")
   res.render("signup.ejs" , {message: null  , secret: secret});
 };
 
 module.exports.register = (req, res) => {
-  console.log("hello");
   let message = null;
   res.render("register.ejs", { message: message });
 };
 
 module.exports.registration = async (req, res) => {
-  console.log(req.body, "registration");
   let message = null;
   let response = {
     success: false,
