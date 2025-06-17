@@ -45,8 +45,6 @@ This project aims to simplify the travel journaling experience with immersive te
 
 ## 📸 Screenshots
 
-> _These are example screenshots — replace links with actual images_
-
 **Login with Google**  
 ![Image](https://github.com/user-attachments/assets/49f53e4b-b92a-4e52-89ea-981a2e2250a1)
 
